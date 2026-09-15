@@ -82,7 +82,7 @@ CLI output is designed to be screenshot-ready after `python -m soc_lab validate`
 Requires Python 3.10+.
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/andrea-casilli/threat-informed-soc-lab.git
 cd threat-informed-soc-lab
 python -m venv .venv
 # Linux/macOS: source .venv/bin/activate
@@ -127,3 +127,4 @@ Read [SECURITY.md](SECURITY.md) before use or contribution. Never add real crede
 ## License
 
 MIT — see [LICENSE](LICENSE).
+

@@ -1,0 +1,20 @@
+title: Simulated Unusual Valid Account Login
+id: 72c9d1ca-8924-451a-9003-48f022b138c6
+status: experimental
+description: Detects a successful SSH login explicitly marked unusual by local lab enrichment.
+references:
+  - https://attack.mitre.org/techniques/T1078/
+author: threat-informed-soc-lab contributors
+date: 2026-09-15
+tags: [attack.initial_access, attack.t1078]
+logsource:
+  product: linux
+  service: sshd
+detection:
+  selection:
+    event_type: authentication_success
+    unusual_login: true
+  condition: selection
+falsepositives:
+  - Legitimate travel, new bastion hosts, or incomplete asset context.
+level: high

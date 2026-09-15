@@ -1,0 +1,20 @@
+title: Simulated Unix Shell Execution
+id: 2dd7d40f-3da4-477a-82f9-5020e3e4b52f
+status: experimental
+description: Detects a process event whose normalized shell field is sh, bash, or zsh.
+references:
+  - https://attack.mitre.org/techniques/T1059/004/
+author: threat-informed-soc-lab contributors
+date: 2026-09-15
+tags: [attack.execution, attack.t1059.004]
+logsource:
+  product: linux
+  category: process_creation
+detection:
+  selection:
+    event_type: process_execution
+    shell: [sh, bash, zsh]
+  condition: selection
+falsepositives:
+  - Expected administrator and automation shell activity.
+level: low

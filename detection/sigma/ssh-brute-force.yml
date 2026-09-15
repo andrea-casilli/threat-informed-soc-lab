@@ -1,0 +1,21 @@
+title: Excessive Simulated SSH Authentication Failures
+id: 56d778ec-4e51-4912-8cc3-7f2de955a901
+status: experimental
+description: Detects five or more failed SSH authentications from one source in five minutes in lab telemetry.
+references:
+  - https://attack.mitre.org/techniques/T1110/
+author: threat-informed-soc-lab contributors
+date: 2026-09-15
+tags: [attack.credential_access, attack.t1110]
+logsource:
+  product: linux
+  service: sshd
+detection:
+  selection:
+    event_type: authentication_failure
+    status: failed
+    service: ssh
+  condition: selection | count(src_ip) by src_ip > 4
+falsepositives:
+  - Misconfigured automation or a user repeatedly entering an incorrect password.
+level: medium

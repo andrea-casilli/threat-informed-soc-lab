@@ -1,0 +1,19 @@
+title: Simulated Network Service Discovery Across Multiple Ports
+id: b35c8df0-75c8-4cab-9b1e-16187b6b72aa
+status: experimental
+description: Detects local lab connection attempts across ten or more destination ports.
+references:
+  - https://attack.mitre.org/techniques/T1046/
+author: threat-informed-soc-lab contributors
+date: 2026-09-15
+tags: [attack.discovery, attack.t1046]
+logsource:
+  category: firewall
+detection:
+  selection:
+    event_type: network_connection_attempt
+    protocol: tcp
+  condition: selection | count(dst_port) by src_ip > 9
+falsepositives:
+  - Approved vulnerability assessment or asset inventory activity.
+level: medium

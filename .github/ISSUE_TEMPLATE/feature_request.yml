@@ -1,0 +1,19 @@
+name: Detection enhancement
+description: Propose a safe, lab-scoped detection or telemetry improvement.
+title: "detection: "
+labels: [enhancement, detection]
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Behavior and ATT&CK mapping
+      description: State the technique ID, telemetry hypothesis, and lab-safe simulation plan.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation plan
+      description: Describe the expected rule, test, false positives, and coverage impact.
+    validations:
+      required: true

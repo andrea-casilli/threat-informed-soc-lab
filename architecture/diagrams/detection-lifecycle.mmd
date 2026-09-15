@@ -1,0 +1,13 @@
+flowchart TD
+    S[Safe local simulator] --> T[Normalized JSONL telemetry]
+    T --> P[Parser]
+    P --> D[Detection engine]
+    D --> A[Structured alert]
+    A --> M[MITRE ATT&CK mapping]
+    M --> R[Triage and incident response]
+    R --> C[Coverage validation]
+    C --> G{Detection gap?}
+    G -->|Yes| I[Improve telemetry or rule]
+    I --> RT[Retest]
+    RT --> C
+    G -->|No| V[Validated coverage]

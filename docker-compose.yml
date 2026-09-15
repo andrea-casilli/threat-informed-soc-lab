@@ -1,0 +1,13 @@
+services:
+  soc-lab:
+    build: .
+    read_only: true
+    user: "10001:10001"
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+    tmpfs: ["/tmp"]
+    volumes:
+      - ./data:/app/data
+      - ./reports:/app/reports
+    command: ["validate"]
+  # Optional future integrations: Zeek, Suricata, SIEM, and dashboard.

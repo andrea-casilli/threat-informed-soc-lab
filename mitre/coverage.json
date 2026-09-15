@@ -1,0 +1,38 @@
+{
+  "overall_coverage_percent": 100.0,
+  "results": [
+    {
+      "technique": "T1110",
+      "scenario": "brute-force",
+      "expected_rule": "SSH-BRUTE-FORCE-001",
+      "result": "PASS",
+      "alert_count": 1,
+      "gap": null
+    },
+    {
+      "technique": "T1046",
+      "scenario": "port-scan",
+      "expected_rule": "NETWORK-SERVICE-DISCOVERY-001",
+      "result": "PASS",
+      "alert_count": 1,
+      "gap": null
+    },
+    {
+      "technique": "T1078",
+      "scenario": "suspicious-login",
+      "expected_rule": "UNUSUAL-VALID-ACCOUNT-001",
+      "result": "PASS",
+      "alert_count": 1,
+      "gap": null
+    },
+    {
+      "technique": "T1059.004",
+      "scenario": "suspicious-process",
+      "expected_rule": "UNIX-SHELL-EXECUTION-001",
+      "result": "PASS",
+      "alert_count": 1,
+      "gap": null
+    }
+  ],
+  "gaps": []
+}

@@ -1,0 +1,29 @@
+techniques:
+  - id: T1110
+    name: Brute Force
+    tactic: Credential Access
+    telemetry: SSH authentication failures
+    detection: SSH-BRUTE-FORCE-001
+    test: brute-force
+    status: validated
+  - id: T1046
+    name: Network Service Discovery
+    tactic: Discovery
+    telemetry: Network connection attempts with destination ports
+    detection: NETWORK-SERVICE-DISCOVERY-001
+    test: port-scan
+    status: validated
+  - id: T1078
+    name: Valid Accounts
+    tactic: Initial Access
+    telemetry: Successful login flagged as unusual
+    detection: UNUSUAL-VALID-ACCOUNT-001
+    test: suspicious-login
+    status: validated
+  - id: T1059.004
+    name: Unix Shell
+    tactic: Execution
+    telemetry: Process execution with shell metadata
+    detection: UNIX-SHELL-EXECUTION-001
+    test: suspicious-process
+    status: validated
